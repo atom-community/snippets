@@ -101,6 +101,7 @@ describe("Snippet Loading", () => {
 
     it("allows other packages to override core packages' snippets", () => {
       waitsForPromise(() => atom.packages.activatePackage("language-javascript"));
+      waitsForPromise(() => atom.packages.activatePackage(path.join(__dirname, 'fixtures', 'package-with-snippets')));
 
       activateSnippetsPackage();
 
